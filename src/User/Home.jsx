@@ -22,7 +22,7 @@ function Home() {
   // USER → all rooms
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/rooms");
+      const res = await axios.get("https://room-backend-production-d344.up.railway.app/rooms");
       setdata(Array.isArray(res.data) ? res.data : []); // 🔥 FIX
     } catch (error) {
       console.log(error);
@@ -34,11 +34,14 @@ function Home() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:8080/RoomOwner/mydata", {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+  const res = await axios.get(
+  "https://room-backend-production-d344.up.railway.app/RoomOwner/mydata",
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
 
       setdata(Array.isArray(res.data) ? res.data : []); // 🔥 FIX
 
@@ -52,11 +55,14 @@ function Home() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:8080/RoomOwner/messages", {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+      const res = await axios.get(
+  "https://room-backend-production-d344.up.railway.app/RoomOwner/messages",
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
 
       setMessages(Array.isArray(res.data) ? res.data : []); // 🔥 FIX
 
@@ -70,11 +76,14 @@ function Home() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:8080/RoomOwner/delete/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+      await axios.delete(
+  `https://room-backend-production-d344.up.railway.app/RoomOwner/delete/${id}`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
 
       setdata(prev => prev.filter(item => item.id !== id));
 
@@ -111,7 +120,7 @@ function Home() {
                           className="w-[220px] h-[220px] bg-white shadow-md rounded-lg flex items-center justify-center"
                         >
                           <img
-                            src={`http://localhost:8080/images/${img}`}
+                            src={`https://room-backend-production-d344.up.railway.app/images/${img}`}
                             className="max-w-full max-h-full object-contain transition duration-300 hover:scale-110"
                           />
                         </div>

@@ -10,7 +10,7 @@ const navigate = useNavigate();
 
 const handleSubmit = async () => {
   try {
-    const res = await axios.post("http://localhost:8080/auth/loginsk", {
+    const res = await axios.post("https://room-backend-production-d344.up.railway.app/auth/loginsk", {
       userName: name,
       password: password
     });
