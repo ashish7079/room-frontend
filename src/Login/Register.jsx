@@ -11,7 +11,7 @@ function Register() {
 
 const handleSubmit = async () => {
     try {
-        const res = await axios.post("https://room-backend-production-d344.up.railway.app/auth/register",{
+        const res = await axios.post("https://room-backend-1-k8iw.onrender.com/auth/register",{
         userName : name,
         password : password,
         role : role

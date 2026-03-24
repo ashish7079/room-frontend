@@ -15,7 +15,7 @@ const handleSubmit = async () => {
     alert("Please login first");
     return;
   }
-    const res = await axios.post(`https://room-backend-production-d344.up.railway.app/user/buynow/${id}`,null,
+    const res = await axios.post(`https://room-backend-1-k8iw.onrender.com/user/buynow/${id}`,null,
         {
             params:{
         userName : name,

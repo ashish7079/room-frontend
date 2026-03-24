@@ -22,7 +22,7 @@ function Home() {
   // USER → all rooms
   const fetchData = async () => {
     try {
-      const res = await axios.get("https://room-backend-production-d344.up.railway.app/rooms");
+      const res = await axios.get("https://room-backend-1-k8iw.onrender.com/rooms");
       setdata(Array.isArray(res.data) ? res.data : []); // 🔥 FIX
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ function Home() {
       const token = localStorage.getItem("token");
 
   const res = await axios.get(
-  "https://room-backend-production-d344.up.railway.app/RoomOwner/mydata",
+  "https://room-backend-1-k8iw.onrender.com/RoomOwner/mydata",
   {
     headers: {
       Authorization: `Bearer ${token}`
@@ -56,7 +56,7 @@ function Home() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-  "https://room-backend-production-d344.up.railway.app/RoomOwner/messages",
+  "https://room-backend-1-k8iw.onrender.com/RoomOwner/messages",
   {
     headers: {
       Authorization: `Bearer ${token}`
@@ -77,7 +77,7 @@ function Home() {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-  `https://room-backend-production-d344.up.railway.app/RoomOwner/delete/${id}`,
+  `https://room-backend-1-k8iw.onrender.com/RoomOwner/delete/${id}`,
   {
     headers: {
       Authorization: `Bearer ${token}`
@@ -120,7 +120,7 @@ function Home() {
                           className="w-[220px] h-[220px] bg-white shadow-md rounded-lg flex items-center justify-center"
                         >
                           <img
-                            src={`https://room-backend-production-d344.up.railway.app/images/${img}`}
+                            src={`https://room-backend-1-k8iw.onrender.com/images/${img}`}
                             className="max-w-full max-h-full object-contain transition duration-300 hover:scale-110"
                           />
                         </div>
